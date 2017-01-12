@@ -1,7 +1,8 @@
-// Apply the java plugin to add support for Java
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'application'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 version = '1.0'
@@ -15,6 +16,12 @@ jar {
 mainClassName = "ch.froorider.oca8.Application"
 run {
     args = ['Tiger', 'Panther']
+}
+
+test {
+    jacoco {
+        excludes += ["ch.froorider.oca8.Application"]
+    }
 }
 
 // In this section you declare where to find the dependencies of your project
