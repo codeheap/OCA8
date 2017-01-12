@@ -1,0 +1,32 @@
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+version = '1.0'
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'OCA8 Sample Code',
+                'Implementation-Version': version
+    }
+}
+
+mainClassName = "ch.froorider.oca8.Application"
+run {
+    args = ['Tiger', 'Panther']
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+}
+
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.7'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.7'
+
+    testCompile 'junit:junit:4.12'
+}
+
