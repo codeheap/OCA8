@@ -32,6 +32,9 @@ public class ZooPrinter implements RunnableSample{
         return true;
     }
 
+    /**
+     * @return The name of the sample
+     */
     @Override
     public String getNameOfSample() {
         return NAME_OF_SAMPLE;
@@ -44,13 +47,13 @@ public class ZooPrinter implements RunnableSample{
 
     @Override
     public boolean run(Map<String,Object> context) {
-        if(context == null || context.values() == null){
+        if(context == null){
             logger.warn("Null cannot be printed.");
             return false;
         }
 
         for (Object animal:context.values()) {
-            logger.info("Animal of this zoo: "+(String)animal);
+            logger.info("Animal of this zoo: "+ animal);
         }
         return true;
     }

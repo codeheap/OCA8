@@ -24,13 +24,13 @@ public class Application {
     public static void main(String[] args){
         List<Object> input = new ArrayList<>();
         ZooPrinter printer = new ZooPrinter();
-        Map<String,Object> context = new HashMap<String, Object>();
+        Map<String,Object> context = new HashMap<>();
 
         if(args.length > 0) {
             logger.info("Printing out the input arguments.");
-            for (int i = 0; i < args.length; i++) {
-                input.add(args[i]);
-                context.put(args[i].toString(),args[i]);
+            for (String arg : args) {
+                input.add(arg);
+                context.put(arg, arg);
             }
 
             printer.printAnimals(input);
