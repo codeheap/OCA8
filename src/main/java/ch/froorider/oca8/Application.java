@@ -2,9 +2,7 @@ package ch.froorider.oca8;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.ServiceLoader;
 
@@ -22,18 +20,13 @@ public class Application {
     }
 
     public static void main(String[] args){
-        List<Object> input = new ArrayList<>();
-        ZooPrinter printer = new ZooPrinter();
-        Map<String,Object> context = new HashMap<>();
 
+        Map<String,Object> context = new HashMap<>();
         if(args.length > 0) {
             logger.info("Printing out the input arguments.");
             for (String arg : args) {
-                input.add(arg);
                 context.put(arg, arg);
             }
-
-            printer.printAnimals(input);
         }
         else{
             logger.warn("Nothing to print.");
