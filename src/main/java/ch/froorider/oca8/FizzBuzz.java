@@ -40,6 +40,9 @@ public class FizzBuzz implements RunnableSample{
             else if(isDivisibleByThree(i) && isDivisibleByFive(i)){
                 logger.info(FIZZ+BUZZ);
             }
+            else if(containsThree(i)){
+                logger.info(FIZZ);
+            }
             else{
                 logger.info(i);
             }
@@ -55,5 +58,13 @@ public class FizzBuzz implements RunnableSample{
     private boolean isDivisibleByFive(int aNumber){
         int result = aNumber%5;
         return result == 0;
+    }
+
+    private boolean containsThree(int aNumber){
+        if(String.valueOf(aNumber).contains("3")){
+            return true;
+        }
+
+        return false;
     }
 }
