@@ -6,7 +6,7 @@ before_install:
 addons:
   sonarqube:
     token:
-      secure: SONAR_TOKEN # encrypted value of your token
+      secure: $SONAR_TOKEN # encrypted value of your token
 
 jdk:
  - oraclejdk8
